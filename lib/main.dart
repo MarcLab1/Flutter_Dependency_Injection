@@ -19,11 +19,11 @@ class MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<MyWidget> {
   Todo? todo = null;
-  TodoRepository todoRepo = GetIt.I.get<TodoRepository>();
+  ITodoRepository todoRepo = GetIt.I.get<ITodoRepository>();
   Future<void> _getTodo() async {
     //Todo todo = await getIt.get<TodoController>().getTodo();
-    Todo todo = await TodoRepository().getTodo();
-
+    //Todo todo = await TodoRepository().getTodo();
+    Todo todo = await todoRepo.getTodo();
     setState(() {
       this.todo = todo;
     });
@@ -45,7 +45,7 @@ class _MyWidgetState extends State<MyWidget> {
               children: [
                 TextWidget1(),
                 TextWidget2(),
-                Padding(
+                const Padding(
                   padding: const EdgeInsets.only(bottom: 20),
                   child: Center(
                     child: Text(

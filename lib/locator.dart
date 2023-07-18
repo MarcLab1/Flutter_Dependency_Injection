@@ -6,8 +6,8 @@ import 'TodoRepository.dart';
 final getIt = GetIt.instance;
 
 void setup() {
-  getIt.registerLazySingleton<TodoRepository>(() => TodoRepository());
-  getIt.registerLazySingleton<TodoController>(() => TodoController());
+  getIt.registerLazySingleton<ITodoRepository>(() => TodoRepository());
+  getIt.registerLazySingleton<ITodoController>(() => TodoController());
 
   //GetIt.I.registerLazySingleton<TodoController>(() => TodoController());
 }

@@ -3,7 +3,12 @@ import 'dart:math';
 import 'Todo.dart';
 import 'locator.dart';
 
-class TodoRepository {
+abstract class ITodoRepository {
+  Future<Todo> getTodo();
+}
+
+class TodoRepository implements ITodoRepository {
+  @override
   Future<Todo> getTodo() async {
     return todos[Random().nextInt(5)];
   }

@@ -2,7 +2,12 @@ import 'Todo.dart';
 import 'TodoRepository.dart';
 import 'locator.dart';
 
-class TodoController {
+abstract class ITodoController {
+  Future<Todo> getTodo();
+}
+
+class TodoController implements ITodoController {
+  @override
   Future<Todo> getTodo() async {
     return getIt.get<TodoRepository>().getTodo();
   }
