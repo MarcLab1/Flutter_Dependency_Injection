@@ -49,7 +49,7 @@ class _MyWidgetState extends State<MyWidget> {
                   padding: const EdgeInsets.only(bottom: 20),
                   child: Center(
                     child: Text(
-                        "In Flutter, recomposition is cheap?  Is this going to inefficient for larger apps later on?"),
+                        "In Flutter, recomposition is cheap?  Is this going to be inefficient for larger apps later on?"),
                   ),
                 ),
                 (todo == null)
